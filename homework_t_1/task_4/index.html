@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p>
+<ul>
+    <li><span class="attr">Нормальное</span> выполнение прерывает парсинг html страницы для загрузки и выполнения
+        скрипта
+    </li>
+    <li><span class="attr">async</span> асинхронно загружает скрипт и выполнеяет его после загрузки,
+        то есть парсинг html прерывается после завершения загрузки и возобновляется после загрузки скрипта. Доступен для
+        внешних файлов
+    </li>
+    <li><span class="attr">defer</span> Стартует асинхронную загрузку без прерывания парсинга html но выполняет скрипт
+        уже после полной загрузки страницы
+    </li>
+</ul>
+
+</p>
+<script src="script.js"></script>
+</body>
+</html>
