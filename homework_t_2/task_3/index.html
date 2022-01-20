@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict'
+    // 3. Объявить две переменные a и b и задать им целочисленные произвольные начальные значения.
+    //     Затем написать скрипт, который работает по следующему принципу:
+    //     - если a и b положительные, вывести их разность (ноль можно считать положительным числом);
+    // - если а и b отрицательные, вывести их произведение;
+    // - если а и b разных знаков, вывести их сумму;
+
+    const a = Math.floor(Math.random() * 100) - 50;
+    const b = Math.floor(Math.random() * 100) - 50;
+
+    if (a >= 0 && b >= 0) {
+        console.log(a - b);
+    } else if (a <= 0 && b <= 0) {
+        console.log(a * b);
+    } else {
+        console.log(a + b);
+    }
+
+</script>
+</body>
+</html>
