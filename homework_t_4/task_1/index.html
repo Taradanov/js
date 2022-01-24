@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict'
+    // 1. Написать функцию, преобразующую число в объект. Передавая на вход число в диапазоне [0, 999],
+    //     мы должны получить на выходе объект, в котором в соответствующих свойствах описаны разряды числа:
+    //     - единицы (в свойстве firstDigit)
+    // - десятки (в свойстве secondDigit)
+    // - сотни (в свойстве thirdDigit)
+    // Например, для числа 45 мы должны получить следующий объект:
+
+    const digit = {
+        number: NaN,
+        firstDigit: 0,
+        secondDigit: 0,
+        thirdDigit: 0,
+        inputNumber() {
+            const inputDigit = parseInt(prompt('Введите трехзначное число'))
+            if (inputDigit < 1000 && inputDigit > 0) {
+                this.number = inputDigit;
+            } else {
+                console.log('Вы ввели не число')
+            }
+        },
+        calculateDigits() {
+            this.firstDigit = this.number % 10
+            this.secondDigit = Math.floor(this.number / 10) % 10
+            this.thirdDigit = Math.floor(this.number / 100) % 10
+        },
+        showDigits() {
+            console.log(alert(`firstDigit ${this.firstDigit}, secondDigit ${this.secondDigit}, thirdDigit ${this.thirdDigit}`))
+        }
+    }
+    digit.inputNumber();
+    digit.calculateDigits()
+    // digit.showDigits()
+</script>
+</body>
+</html>
