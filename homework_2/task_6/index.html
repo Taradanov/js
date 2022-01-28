@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict'
+    // Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+    // где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+    //     В зависимости от переданного значения операции выполнить одну из арифметических операций,
+    //     используя функции из пункта 5, и вернуть полученное значение, используя switch.
+    function addition(a, b) {
+        return a + b
+    }
+
+    function subtraction(a, b) {
+        return a - b
+    }
+
+    function multiplication(a, b) {
+        return a * b
+    }
+
+    function division(a, b) {
+        return a / b
+    }
+
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case '+':
+                return addition(arg1, arg2)
+            case '-':
+                return subtraction(arg1, arg2)
+            case '*':
+                return multiplication(arg1, arg2)
+            case '/':
+                return division(arg1, arg2)
+        }
+        return NaN
+    }
+
+    console.log(mathOperation(100, 3, '+'))
+    console.log(mathOperation(100, 3, '-'))
+    console.log(mathOperation(100, 3, '/'))
+    console.log(mathOperation(100, 3, '*'))
+
+</script>
+</body>
+</html>
