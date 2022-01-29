@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict'
+    // 4. (*) Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+    //
+    // x
+    // xx
+    // xxx
+    // xxxx
+    // xxxxx
+
+    for (let i = 0; i < 20; i++) {
+        let str = '';
+        for (let j = 0; j < i + 1; j++) {
+            str += 'X'
+        }
+        console.log(str)
+    }
+</script>
+</body>
+</html>

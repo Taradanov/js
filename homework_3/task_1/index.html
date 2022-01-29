@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+    'use strict'
+    let i = 2;
+    const simple = []
+    let isSimple;
+
+    while (i<100){
+        isSimple = true;
+        let j = 2;
+        while (j < i) {
+           if (i%j===0){
+               isSimple = false
+           }
+           j++;
+        }
+        if (isSimple){
+            simple.push(i);
+        }
+        i++;
+    }
+    console.log(simple)
+</script>
+</body>
+</html>
