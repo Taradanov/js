@@ -17,7 +17,7 @@
 // рассчитать количество мест корзины
 const cart = {
     cartPositions: new Map(),
-    _id: UUIDGenerator.generateNewKey(),
+    //_id: UUIDGenerator.generateNewKey(),
 
     clearCart() {
         this.cartPositions.clear()
@@ -69,6 +69,9 @@ const product = {
     },
     getName() {
         return this.name;
+    },
+    getUUID(){
+        return this.product_id();
     }
 };
 
@@ -139,50 +142,50 @@ const UUIDGenerator = {
     },
 };
 
-// Создать товар, если такой товар НЕ существует в перечне продуктов
-let newProduct1 = {};
-Object.assign(newProduct1, product);
-newProduct1.init('Товар дешевый, высоколиквидный', 99.99);
-allProducts.addProductToProducts(newProduct1);
-try {
-    let newProduct2 = {};
-    Object.assign(newProduct2, product);
-    newProduct2.init('Товар дешевый, высоколиквидный', 99.99);
-    allProducts.addProductToProducts(newProduct2)
-} catch (e) {
-    console.error('невозможно добавить товар с одинаковым наименованием')
-}
-
-//Добаим ещё пару
-let newProduct2 = {};
-Object.assign(newProduct2, product);
-newProduct2.init('Товар дорогой, высоколиквидный', 888888.00);
-allProducts.addProductToProducts(newProduct2);
-
-let newProduct3 = {};
-Object.assign(newProduct3, product);
-newProduct3.init('Товар дорогой, низколиквидный', 999999.00);
-allProducts.addProductToProducts(newProduct3);
-
-// Поступило на склад
-storehouse.addProductToStorehouse(newProduct1.product_id, 5);
-storehouse.addProductToStorehouse(newProduct1.product_id, 50);
-storehouse.addProductToStorehouse(newProduct2.product_id, 10);
-storehouse.addProductToStorehouse(newProduct3.product_id, 1);
-
-//Недостача)))
-storehouse.removeProductFromStoreHouse(newProduct1.product_id, 1);
-
-// Списать то, чего нет
-try {
-    storehouse.removeProductFromStoreHouse(newProduct3, 100);
-}catch (e){
-    console.error( 'Недостаточно товара на складе');
-}
-
-cart.clearCart();
-cart.addPositionToCart(newProduct1, 10);
-
-// не успел(((
-
-console.log('');
+// // Создать товар, если такой товар НЕ существует в перечне продуктов
+// let newProduct1 = {};
+// Object.assign(newProduct1, product);
+// newProduct1.init('Товар дешевый, высоколиквидный', 99.99);
+// allProducts.addProductToProducts(newProduct1);
+// try {
+//     let newProduct2 = {};
+//     Object.assign(newProduct2, product);
+//     newProduct2.init('Товар дешевый, высоколиквидный', 99.99);
+//     allProducts.addProductToProducts(newProduct2)
+// } catch (e) {
+//     console.error('невозможно добавить товар с одинаковым наименованием')
+// }
+//
+// //Добаим ещё пару
+// let newProduct2 = {};
+// Object.assign(newProduct2, product);
+// newProduct2.init('Товар дорогой, высоколиквидный', 888888.00);
+// allProducts.addProductToProducts(newProduct2);
+//
+// let newProduct3 = {};
+// Object.assign(newProduct3, product);
+// newProduct3.init('Товар дорогой, низколиквидный', 999999.00);
+// allProducts.addProductToProducts(newProduct3);
+//
+// // Поступило на склад
+// storehouse.addProductToStorehouse(newProduct1.product_id, 5);
+// storehouse.addProductToStorehouse(newProduct1.product_id, 50);
+// storehouse.addProductToStorehouse(newProduct2.product_id, 10);
+// storehouse.addProductToStorehouse(newProduct3.product_id, 1);
+//
+// //Недостача)))
+// storehouse.removeProductFromStoreHouse(newProduct1.product_id, 1);
+//
+// // Списать то, чего нет
+// try {
+//     storehouse.removeProductFromStoreHouse(newProduct3, 100);
+// }catch (e){
+//     console.error( 'Недостаточно товара на складе');
+// }
+//
+// cart.clearCart();
+// cart.addPositionToCart(newProduct1, 10);
+//
+// // не успел(((
+//
+// console.log('');
