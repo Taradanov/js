@@ -1,0 +1,10 @@
+.all-products, .btn, .form-control{
+    margin: 20px;
+}
+.product-element{
+    width: 40%;
+    display: -webkit-box;
+}
+.form-control{
+    width: 80%;
+}
